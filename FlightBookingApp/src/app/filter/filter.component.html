@@ -1,0 +1,21 @@
+ 
+    <table style="border:2px solid black">
+        <tr>
+          <th>Name</th>
+          <th>DepartureTime</th>
+          <th>Duration</th>
+          <th>ArrivalTime</th>
+          <th>Destination</th>
+          <th>Price</th>
+        </tr>
+        <tr  *ngFor="let flight of flights | filter : searchText"><td>{{flight.name}}</td>
+          {{departure}}
+
+        <td>{{flight.departureTime}}</td>
+        <td>{{flight.duration}}</td>
+       <td>{{flight.arrivalTime}}</td>
+        <td>{{flight.destination}}</td>
+        <td>{{flight.price}}</td>
+        </tr>
+        </table>
+     
