@@ -1,0 +1,10 @@
+#review{
+    display:inline-flex;
+    width:100%;
+}
+.mc{
+    width:50%;
+    border:2px solid black;
+
+}
+

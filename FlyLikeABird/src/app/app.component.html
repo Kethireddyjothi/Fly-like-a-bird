@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+      <span display="block"> 
+        <h1>Fly Like A Bird</h1>
+   <a href="/">HOME</a></span>
+     <span class="example-fill-remaining-space"></span>
+     <button mat-button (click)="getAboutUs()">About</button>
+     <button mat-button>Contact</button>
+     <a mat-button routerLink="/signup">Register</a>
+     <a mat-button routerLink="/login">Login</a>
+ </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>

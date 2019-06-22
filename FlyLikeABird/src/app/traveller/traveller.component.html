@@ -1,0 +1,42 @@
+<mat-card>
+ <mat-card-title>Traveller details</mat-card-title>
+  <mat-card>
+      <mat-card-title>Adult {{i}}</mat-card-title>
+      <p>Enter your name as it is mentioned on your passport or any government approved ID</p>
+  <mat-form-field appearance="outline">
+    <mat-label>First Name</mat-label>
+  <input  matInput  placeholder="First name"  name="fname"  required>
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>Last Name</mat-label>
+  <input  matInput  placeholder="Last Name" name="lname"  required>
+</mat-form-field>
+<mat-radio-group aria-label="Gender">
+  <mat-radio-button value="1">Male</mat-radio-button>
+  <mat-radio-button value="2">Female</mat-radio-button>
+  <mat-radio-button value="3">Others</mat-radio-button>
+</mat-radio-group><br/>
+<button mat-button color="accent">+ Adult</button>
+</mat-card>
+<mat-card>
+    <mat-card-title>Child {{i}}</mat-card-title>
+    <p>Enter your name as it is mentioned on your passport or any government approved ID</p>
+<mat-form-field appearance="outline">
+  <mat-label>First Name</mat-label>
+<input  matInput  placeholder="First name"  name="fname"  required>
+</mat-form-field>
+<mat-form-field appearance="outline">
+<mat-label>Last Name</mat-label>
+<input  matInput  placeholder="Last Name" name="lname"  required>
+</mat-form-field>
+<mat-radio-group aria-label="Gender">
+<mat-radio-button value="1">Male</mat-radio-button>
+<mat-radio-button value="2">Female</mat-radio-button>
+<mat-radio-button value="3">Others</mat-radio-button>
+</mat-radio-group><br/>
+<button mat-button color="accent">+ Child</button><br/>
+<h3>Acknowledgement</h3>
+<mat-checkbox>I understand and agree with the Privacy Policy, the Terms & Conditions</mat-checkbox><br/>
+<button mat-raised-button color="primary">Continue</button>
+</mat-card>
+</mat-card> 

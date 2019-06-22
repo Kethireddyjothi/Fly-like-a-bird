@@ -1,0 +1,34 @@
+<mat-card class="my-card" style="width:50%;margin-left:25%;margin-top:50px;">
+    <span><b>Registration</b></span>
+    <br/>
+    <br/>
+  <mat-card-content>
+<form class="my-for">
+         <mat-form-field appearance="outline" class="full-width" hintLabel="Max 10 characters">
+                <mat-label>First Name</mat-label>
+                <input #input  matInput  placeholder="First name"  maxlength="10" [formControl]="fname"  required>
+                <mat-error *ngIf="fname.invalid">{{getErrorMessage(fname)}}</mat-error>
+                <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+         </mat-form-field><br/>
+             <mat-form-field appearance="outline" class="full-width" hintLabel="Max 10 characters">
+                <mat-label>Last Name</mat-label>
+                <input  #input matInput  placeholder="Last Name" maxlength="10" [formControl]="lname"  required>
+                <mat-error *ngIf="lname.invalid">{{getErrorMessage(lname)}}</mat-error>
+              <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+             </mat-form-field><br/>
+             <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Email</mat-label>
+                <input  matInput  placeholder="Email" [formControl]="email">
+                <mat-error *ngIf="email.invalid">{{getErrorMessage(email)}}</mat-error>
+                 </mat-form-field><br/>
+             <mat-form-field appearance="outline" class="full-width" hintLabel="Max 8 characters">
+                <mat-label>Password</mat-label>
+                <input matInput  placeholder="Password" [formControl]="pwd"  required>
+                <mat-error *ngIf="pwd.invalid">{{getErrorMessage(pwd)}}</mat-error>
+               </mat-form-field><br/>
+      </form>
+    </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary"  (click)="onSubmit()">REGISTER</button>
+  </mat-card-actions>
+</mat-card>

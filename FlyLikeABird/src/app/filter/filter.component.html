@@ -1,0 +1,59 @@
+<mat-card>
+  <div style="display:inline-flex;width:100%;">
+<mat-card style="width:20%;height:100%; border:2px solid black;font-size:10px;">
+  <mat-card-title style="font-size:15px;"><b>Price</b></mat-card-title>
+  <mat-divider></mat-divider>
+  <ng5-slider  [(value)]="value" [(highValue)]="highValue" (mouseup)="getDetails()" [options]="options"></ng5-slider>
+ <mat-card-title  style="font-size:15px;margin-top:30px;"><b>Departure From</b></mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-checkbox>Morning</mat-checkbox>
+  <mat-checkbox>Afternoon</mat-checkbox>
+  <mat-checkbox>Evening</mat-checkbox>
+  <mat-card-title style="font-size:15px;margin-top:30px;"><b>Stops</b></mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-checkbox>One Stop</mat-checkbox>
+  <mat-checkbox>Two Stops</mat-checkbox>
+  <mat-checkbox>Non Stop</mat-checkbox>
+</mat-card>
+<mat-card style="width:80%; border:2px solid black;margin:5px">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+ <!-- Name Column -->
+ 
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- departure Column -->
+  <ng-container matColumnDef="departureTime">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>DepartureTime </th>
+    <td mat-cell *matCellDef="let element">{{element.departureTime}} </td>
+  </ng-container>
+ 
+   <!-- arrival Column -->
+  <ng-container matColumnDef="arrivalTime">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>ArrivalTime </th>
+    <td mat-cell *matCellDef="let element"> {{element.arrivalTime}} </td>
+  </ng-container>
+  <ng-container matColumnDef="from">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> from </th>
+    <td mat-cell *matCellDef="let element"> {{element.from}} </td>
+  </ng-container>
+  <!-- destination Column -->
+  <ng-container matColumnDef="destination">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Destination </th>
+    <td mat-cell *matCellDef="let element"> {{element.destination}} </td>
+  </ng-container>
+   
+  <!-- price Column -->
+   <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>price </th>
+    <td mat-cell *matCellDef="let element"> {{element.price}}<button mat-button color="accent" (click)="booking()">Book flight</button> </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> 
+</table>
+</mat-card>
+</div>
+</mat-card>
